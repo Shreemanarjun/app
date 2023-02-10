@@ -9,6 +9,8 @@ license = "MIT"
 python = "^3.10"
 fastapi = "^0.90.1"
 uvicorn = "^0.20.0"
+pydantic = {version = "*", extras = ["email"]}
+
 
 [tool.poetry.dev-dependencies]
 
