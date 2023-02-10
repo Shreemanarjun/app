@@ -4,7 +4,7 @@ from blog.routers import userRouter, blogRouter, authRouter, profile
 from blog import models
 from blog import database
 
-app = FastAPI()
+app = FastAPI(docs_url="/")
 
 origins = [
     "https://app-demo-banty.herokuapp.com",

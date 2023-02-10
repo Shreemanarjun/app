@@ -31,4 +31,4 @@ def simplelogin(request:schemas.Login, db: Session = Depends(get_db)):
     if not Hash.verify(user.password, request.password):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Incorrect password")
             
-    return user;
+    return {"user":user};

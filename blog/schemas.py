@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,EmailStr
 from typing import List, Optional, Union
 from fastapi import Query
 
@@ -31,7 +31,7 @@ class ShowBlogs(Blog):
 # request json type
 class User(BaseModel):
     name: str
-    email: Union[str, None] = Query(default=None, regex="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
+    email: Union[EmailStr, None] = Query(default=None)
     password: str
     
 # response json type

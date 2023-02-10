@@ -11,7 +11,7 @@ approute = APIRouter(
 
 @approute.post("/", status_code = status.HTTP_201_CREATED)
 def createBlogs(blog: schemas.Blog, db: Session = Depends(get_db), token: schemas.User = Depends(oAuth2.get_current_user)):
-    return blogRepository.create(blog, db)
+    return {"blog":blogRepository.create(blog, db)}
 
 @approute.get("/allBlogs")
 def allBlogs(db: Session = Depends(get_db), token: schemas.User = Depends(oAuth2.get_current_user)):
